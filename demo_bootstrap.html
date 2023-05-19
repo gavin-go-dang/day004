@@ -12,24 +12,10 @@
     <title>Document</title>
     <script src="js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script>    
-      $(document).ready(function(){
-          $("#daili").on({
-            mouseenter: function(){
-              $(this).css("background-color", "lightgray");
-            },
-            mouseleave: function(){
-              $(this).css("background-color", "lightblue");
-            },
-            click: function(){
-              $(this).css("background-color", "yellow");
-            }
-          });
-        });
-  </script>
+  
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id='nav_bar'>
         <div class="container-fluid">
           <a class="nav-link active" href="#">Home</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +33,8 @@
                 <a class="nav-link">About</a>
               </li>
             </ul>
-            <button type="button" class="btn btn-dark">Dark</button>
-            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-dark" onclick="darkMode()">Dark</button>
+            <button type="button" class="btn btn-light" onclick="lighMode()">Light</button>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" name="search" id="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit" onclick="return check_box_search();">Search</button>
@@ -131,6 +117,7 @@
   <footer
           class="text-center text-lg-start text-white footer"
           style="background-color: #3e4551"
+          id="footer"
           >
     <!-- Grid container -->
     <div class="container p-4 pb-0">
@@ -140,9 +127,9 @@
         <div class="row">
           <!--Grid column-->
           <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Quy Nhon Travel</h5>
+            <h5 class="text-uppercase footer-text">Quy Nhon Travel</h5>
 
-            <p>
+            <p class="footer-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Molestiae modi cum ipsam ad, illo possimus laborum ut
               reiciendis obcaecati. 
@@ -152,14 +139,14 @@
 
           <!--Grid column-->
           <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase daili">Đại lí 1</h5>
+            <h5 class="text-uppercase daili footer-text">Đại lí 1</h5>
 
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#!" class="text-white">Mr.A: 11111111</a>
+                <a href="#!" class="text-white footer-text">Mr.A: 11111111</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Ms.B: 22222222</a>
+                <a href="#!" class="text-white footer-text">Ms.B: 22222222</a>
               </li>
             </ul>
           </div>
@@ -167,14 +154,14 @@
 
           <!--Grid column-->
           <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase daili">Đại lí 2</h5>
+            <h5 class="text-uppercase daili footer-text">Đại lí 2</h5>
 
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#!" class="text-white">Mr.C: 11111111</a>
+                <a href="#!" class="text-white footer-text">Mr.C: 11111111</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Mr.X: 99999999</a>
+                <a href="#!" class="text-white footer-text">Mr.X: 99999999</a>
               </li>
             </ul>
           </div>
@@ -182,14 +169,14 @@
 
           <!--Grid column-->
           <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase daili">Đại lí: 3</h5>
+            <h5 class="text-uppercase daili footer-text">Đại lí: 3</h5>
 
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#!" class="text-white"></a>
+                <a href="#!" class="text-white footer-text"></a>
               </li>
               <li>
-                <a href="#!" class="text-white">Mr.E: 7777777</a>
+                <a href="#!" class="text-white footer-text">Mr.E: 7777777</a>
               </li>
             </ul>
           </div>
@@ -197,14 +184,14 @@
 
           <!--Grid column-->
           <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase daili">Khiếu nại:</h5>
+            <h5 class="text-uppercase daili footer-text">Khiếu nại:</h5>
 
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#!" class="text-white">Link 1</a>
+                <a href="#!" class="text-white footer-text">Link 1</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Link 2</a>
+                <a href="#!" class="text-white footer-text">Link 2</a>
               </li>
             </ul>
           </div>
@@ -219,8 +206,8 @@
       <!-- Section: CTA -->
       <section class="">
         <div class="'contact">
-            <span class="me-3 tel">Tel: 8888888</span>
-            <span class="me-3 address">Address: AB street, Quy Nhon City, Binh Dinh</span>
+            <span class="me-3 tel footer-text">Tel: 8888888</span>
+            <span class="me-3 address footer-text">Address: AB street, Quy Nhon City, Binh Dinh</span>
     
       </div>
       </section>
@@ -249,6 +236,7 @@
       error => console.log(error)
     )
   </script>
+ 
   <!-- Footer -->
 <!-- End of .container -->
 </body>
