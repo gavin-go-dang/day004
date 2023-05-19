@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Math</title>
+</head>
+<body>
+    <h1>Solve math with js</h1>
+
+    <h2>Buble sort: 1, 3, 10, 4, 6, 22, 8, 5, 9</h2>
+    <h3 id="problem1"></h3>
+    <script>
+        const values = [1, 3, 10, 4, 6, 22, 8, 5, 9];
+        for (let i = 0; i < values.length - 1; i++) {
+            for (let j = i; j > values.length; j++){
+                if (values[i]<values[j]){
+                values[j]= values[j]+values[i]
+                values[i]= values[j]- values[i]
+                values[j]= values[j]- values[i]
+                }
+            }        
+        }
+        console.log(values)
+        document.getElementById("problem1").innerHTML = 'Dãy sau sắp sếp: ' +    values;
+    </script>
+    <h2>Fibonaci thứ 9:</h2>
+    <h3 id="problem2"></h3>
+    <script>
+        function Fibonaci(n){
+            if (n <= 2){
+                return 1;
+            }
+            else {
+                return (Fibonaci(n-2)+Fibonaci(n-1))
+            }
+        }
+        console.log(Fibonaci(9))
+        document.getElementById("problem2").innerHTML = '' +   Fibonaci(9);
+    </script>
+</body>
+</html>
