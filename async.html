@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <script>
+        const timDo = (callback)=>{
+            console.log('Tìm chìa khóa')
+            console.log('Đang tìm')
+            setTimeout(() =>{
+                viTri='ở trên tủ'
+                console.log('Đã tìm thấy chìa khóa')
+                callback(viTri)
+            }, 1000)
+            
+        }
+        const daTimDuoc= (timDo) =>{
+            console.log('Đem chìa khóa   ra xe')
+            console.log('Nổ máy ')
+        }
+        timDo(daTimDuoc)
+    </script>
+</body>
+</html>
