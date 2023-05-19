@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Create class Person with 2 features are 'fisrtname' and 'lastname'</h2>
+    <p id="name"></p>
+    <h2>Encapsulation</h2>
+    <p>Thuộc tính được bảo vệ và bị truy cập ngoài lớp:</p>
+    <p id="name_cap_out"></p>
+    <p>Thuộc tính đực bảo vệ và thiết lập các function để truy cập trong lớp:</p>
+    <p id="name_cap_in"></p>
+    <h2>Inheritance</h2>
+    <p class="name_sup"></p>
+    <p id="power"></p>
+    <!-- Khởi tạo -->
+    <script>
+        // Cac thuoc tinh khong duoc bao ve
+        function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.showName = function() {
+            console.log(this.firstName + ' ' + this.lastName);
+            return this.firstName + ' ' + this.lastName
+        };
+        }
+        var psn1 = new Person('Gavin', 'Dang');
+        psn1.showName();
+        document.getElementById("name").innerHTML ='Ten nguoi dung: ' + psn1.showName();
+    </script>
+    <!-- Đóng gói -->
+    <script>
+        // Cac thuoc tinh duoc bao ve và truy cập trong lớp
+        function Person(firstName, lastName) {
+        var fstName = firstName;
+        var lstName = lastName;
+        
+        this.setFirstName = function(firstName) { 
+            fstName = firstName; 
+        };
+
+        this.getFirstName = function() {
+            return fstName; 
+        };
+        
+        this.setLastName = function(lastName) { 
+            lstName = lastName; 
+        };
+
+        this.getLastName = function() { 
+            return lstName; 
+        };
+        }
+
+        var person1 = new Person('Gavin', 'Dang');
+        
+        console.log(person1.fstName); // Undefined, không thể truy cập được
+        document.getElementById("name_cap_out").innerHTML = 'Ten nguoi dung: ' + person1.fstName;
+
+        console.log(person1.getFirstName()); // Gavin
+        document.getElementById("name_cap_in").innerHTML = 'Ten nguoi dung: ' + person1.getFirstName();
+    </script>
+
+    <!-- Kế thua với ES6-->
+    <script>
+        function Person() {
+            this.firstName = 'Per';
+            this.lastName = 'son';
+            this.sayName = function() { 
+                return this.firstName + ' ' + this.lastName;
+            };
+        }
+
+        // Viết một Constructor Function khác
+        function SuperMan(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            var power= 0;
+            this.sayPower = function() {
+                return power;
+            };
+            this.setPower = function(pow) {
+                power= pow;
+            };
+        }
+
+        // Superman kế thừa các thuộc tính của person và có thêm function sayPower
+        // Sử dụng prototype để kế thừa
+        SuperMan.prototype = new Person();
+
+        // Tạo một object mới bằng Constructor Function 
+        var man1= new SuperMan('Gavin', 'Dang');
+        man1.setPower(100)
+        console.log(man1)
+        console.log(man1.sayPower())
+        power= man1.sayPower();
+        name = man1.sayName()
+        
+        try{
+            document.getElementById("power").innerHTML = 'Sức mạnh siêu nhân '+ name+' : ' + power;
+        }
+        catch(err){
+            document.getElementById("power").innerHTML = 'Ten biet được sức mạnh';
+        }
+    </script>
+</body>
+</html>
