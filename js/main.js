@@ -1,3 +1,4 @@
+// Check box search is null
 function check_box_search()
 {
     if (document.getElementById('search').value==""
@@ -10,3 +11,9 @@ function check_box_search()
     return (true);
 }
 
+
+
+// write user name on UI
+function write_name(){
+    document.getElementById("user-name").innerHTML = 5+6;
+}
