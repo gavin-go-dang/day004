@@ -57,3 +57,11 @@ function darkMode()
     }
 }
 
+
+window.onload= function(){
+    var home_click = document.getElementById('home')
+    home_click.addEventListener('click', click_here);
+}
+function click_here(){
+    alert('Đang chuyển đến home')
+}
