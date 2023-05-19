@@ -1,0 +1,15 @@
+.col-md-2 blue {
+  color: #0000ff;
+}
+.col-md-2 .red {
+  color: red;
+}
+.col-md-2 .green {
+  color: green;
+}
+.col-md-2 .yellow {
+  color: yellow;
+}
+.col-md-2 .purple {
+  color: purple;
+}
