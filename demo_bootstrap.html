@@ -10,21 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrapscss.css">
     <title>Document</title>
     <script src="js/main.js"></script>
-    <script type="text/javascript">
-
-      function check()
-      {
-          if (document.getElementById('search').value==""
-                 || document.getElementById('search').value==undefined)
-          {
-              alert ("Please Enter a File Name");
-              return (false);
-          }
-          alert ("Is finding");
-          return (true);
-      }
-
-  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>    
       $(document).ready(function(){
@@ -63,7 +48,7 @@
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" name="search" id="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit" onclick="return check();">Search</button>
+              <button class="btn btn-outline-success" type="submit" onclick="return check_box_search();">Search</button>
             </form>
           </div>
         </div>

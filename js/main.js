@@ -1,10 +1,12 @@
-check()
+function check_box_search()
 {
-    if (!frm1.FileName.value)
-                {
-                    alert ("Please Enter a File Name");
-                    return (false);
-                }
-                return alert (frm1.FileName.value);;
+    if (document.getElementById('search').value==""
+           || document.getElementById('search').value==undefined)
+    {
+        alert ("Please Enter a File Name");
+        return (false);
+    }
+    alert ("Is finding "+ document.getElementById('search').value);
+    return (true);
 }
 
