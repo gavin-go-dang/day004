@@ -10,6 +10,12 @@
     size: 25%;
 }
 
+#user-name{
+    color: white;
+    border: #ddd;
+    margin-left: 1%;
+}
+
 .bg-image{
     margin: auto;
     background-repeat: no-repeat;

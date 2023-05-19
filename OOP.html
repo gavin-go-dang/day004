@@ -15,7 +15,8 @@
     <p>Thuộc tính đực bảo vệ và thiết lập các function để truy cập trong lớp:</p>
     <p id="name_cap_in"></p>
     <h2>Inheritance</h2>
-    <p id="job"></p>
+    <p class="name_sup"></p>
+    <p id="power"></p>
     <!-- Khởi tạo -->
     <script>
         // Cac thuoc tinh khong duoc bao ve
@@ -63,29 +64,50 @@
         console.log(person1.getFirstName()); // Gavin
         document.getElementById("name_cap_in").innerHTML = 'Ten nguoi dung: ' + person1.getFirstName();
     </script>
-    
-    <!-- Kế thua -->
+
+    <!-- Kế thua với ES6-->
     <script>
-        function Person(firstName, lastName) {
-        var fstName = firstName;
-        var lstName = lastName;
-        
-        this.setFirstName = function(firstName) { 
-            fstName = firstName; 
-        };
+        function Person() {
+            this.firstName = 'Per';
+            this.lastName = 'son';
+            this.sayName = function() { 
+                return this.firstName + ' ' + this.lastName;
+            };
+        }
 
-        this.getFirstName = function() {
-            return fstName; 
-        };
-        
-        this.setLastName = function(lastName) { 
-            lstName = lastName; 
-        };
+        // Viết một Constructor Function khác
+        function SuperMan(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            var power= 0;
+            this.sayPower = function() {
+                return power;
+            };
+            this.setPower = function(pow) {
+                power= pow;
+            };
+        }
 
-        this.getLastName = function() { 
-            return lstName; 
-        };
+        // Superman kế thừa các thuộc tính của person và có thêm function sayPower
+        // Sử dụng prototype để kế thừa
+        SuperMan.prototype = new Person();
+
+        // Tạo một object mới bằng Constructor Function 
+        var man1= new SuperMan('Gavin', 'Dang');
+        man1.setPower(100)
+        console.log(man1)
+        console.log(man1.sayPower())
+        power= man1.sayPower();
+        name = man1.sayName()
+        
+        try{
+            document.getElementById("power").innerHTML = 'Sức mạnh siêu nhân '+ name+' : ' + power;
+        }
+        catch(err){
+            document.getElementById("power").innerHTML = 'Ten biet được sức mạnh';
         }
     </script>
+    <!-- Fetch API -->
+
 </body>
 </html>
