@@ -119,28 +119,71 @@
     <h2>Polymophsm</h2>
     <script>
 
-        class A
-        {
-            display()
+            class A
             {
-                document.writeln("This is A class <br>");
+                constructor (name){
+                    this.name = name;
+                }
+
+                display()
+                {
+                    document.writeln("This is A class <br>");
+                }
+
+                display_2()
+                {
+                    document.writeln("This is Function 2 of A<br>");
+                }
+ 
+                
+            }
+            class B extends A
+            {
+                constructor (name, job){
+                    super(name);
+                    console.log('Overload constructor');
+                    this.job = job;
+                }
+                display()
+                {
+                    document.writeln("This is B class<br>"); //Overload function
+                }
+
+                display_2()
+                {
+                    super.display_2();
+                    // document.writeln("This is Function 2 of B<br>"); //Overload function
+                }
             }
             
-        }
-        class B extends A
-        {
-            display()
+            var a=[new A(), new B()]
+            a.forEach(function(message)
             {
-                document.writeln("This is B class<br>"); //Overload function
-            }
-        }
-        
-        var a=[new A(), new B()]
-        a.forEach(function(message)
-        {
-            message.display();
-        });
-        </script>
+                message.display();
+            });
+            a[1].display_2()
+            </script>
+            <h2>Abstraction</h2>
+    <script>
+            class AbstractPerson {
+            name   = "Somebody"
+            age    = 1001
+            gender = "male"
+            // --
+            constructor () { throw new Error ("AbstractPerson is an abstract class.") }
+            getSomething () { throw new Error ("Not overridden.") }
+            setSomething () { throw new Error ("Not overridden.") }
+            } //. AbstractPerson
+
+            class American extends AbstractPerson {
+            } //. American
+
+
+            // - main - - - - - - - - - - - -
+
+            var fred = new American ()
+            console.log (fred.getSomething ())
+    </script>
     
 </body>
 </html>
