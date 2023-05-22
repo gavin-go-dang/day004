@@ -11,8 +11,7 @@ btn.addEventListener("click", function() {
       renderHTML(ourData);
     } else {
       console.log("We connected to the server, but it returned an error.");
-    }
-    
+    }    
   };
 
   ourRequest.onerror = function() {
