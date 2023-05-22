@@ -1,0 +1,28 @@
+[
+    {
+        "name": "mèo 1",
+        "species": "mèo",
+        "food": {
+            "like": ["catnip", "tuna", "fish"], 
+            "hate": ["onion"]
+        }
+    },
+
+    {
+        "name": "chó 1",
+        "species": "chó",
+        "food": {
+            "like": ["bone", "fish", "meat"], 
+            "hate": ["cat"]
+        }
+    },
+
+    {
+        "name": "mèo 2",
+        "species": "mèo",
+        "food": {
+            "like": ["catnip", "soup", "fish"], 
+            "hate": ["onion"]
+        }
+    }
+]
