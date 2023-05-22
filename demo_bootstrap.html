@@ -12,8 +12,28 @@
     <title>Document</title>
     <script src="js/main.js"></script>
     <script src="js/jquery-3.7.0.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        var myString = `
+            <div class="col">
+            <div class="video-box">
+              <iframe width="420" height="315" class="video_intro"
+                  src="https://www.youtube.com/embed/hz_QEJbxYZA"
+                  title="iframe Example 1">
+              </iframe>
+            </div>
+        `;
+        $(document).ready(function(){
+              $("#btn1").click(function(){
+                $(".video_list").append(myString);
+              });
+
+              $("#btn2").click(function(){
+                $(".col").last().remove();
+              });
+
+          });
+    </script>
 </head>
 <body id="body">
     <nav class="navbar navbar-expand-lg bg-body-tertiary" id='nav_bar'>
@@ -60,7 +80,7 @@
   </div>
   
   <div class="container text-center">
-    <div class="row">
+    <div class="row video_list">
       <div class="col">
         <div class="video-box">
           <iframe width="420" height="315" class="video_intro"
@@ -86,7 +106,10 @@
         </div>
       </div>
     </div>
+    <button id="btn1">Append item</button>
+    <button id="btn2">Remove item</button>
   </div>
+
     <div class="type-service-box">
       <p id="service-type-text">Các loại hình dịch vụ:</p>
     </div>
@@ -240,9 +263,9 @@
   <script>
     jQuery(document).ready(function(){
       jQuery('#contact_bnt').click(function(){
-        alert('Đang liên hệ')
-      })
-    })
+        alert('Đang gọi 09xxxxxxx');
+      });
+    });
   </script>
   <!-- Footer -->
 <!-- End of .container -->

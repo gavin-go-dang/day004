@@ -65,3 +65,5 @@ window.onload= function(){
 function click_here(){
     alert('Đang chuyển đến home')
 }
+
+

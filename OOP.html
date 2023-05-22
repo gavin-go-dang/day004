@@ -112,9 +112,95 @@
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(
             res => {
-                console.log(res);
-            
+                console.log(res);            
         })
     </script>
+    
+    <h2>Polymophsm</h2>
+    <script>
+
+            class A
+            {
+                constructor (name){
+                    this.name = name;
+                }
+
+                display()
+                {
+                    document.writeln("This is A class <br>");
+                }
+
+                display_2()
+                {
+                    document.writeln("This is Function 2 of A<br>");
+                }
+ 
+                
+            }
+            class B extends A
+            {
+                constructor (name, job){
+                    super(name);
+                    console.log('Overload constructor');
+                    this.job = job;
+                }
+                display()
+                {
+                    document.writeln("This is B class<br>"); //Overload function
+                }
+
+                display_2()
+                {
+                    super.display_2();
+                }
+            }
+            
+            var a=[new A(), new B()]
+            a.forEach(function(message)
+            {
+                message.display();
+            });
+            a[1].display_2()
+    </script>
+    <h2>Abstraction</h2>
+    <script>
+            class AbstractPerson {
+                    constructor() {
+                        if (this.constructor == AbstractPerson) {
+                        throw new Error("Your Error Message...");
+                            }
+                        }
+                        info() {
+                            throw new Error(" Added abstract Method has no implementation");
+                        }
+
+                        getSal() {
+                            throw new Error(" Added abstract Method has no implementation");
+                        }
+                    }
+
+
+                    class Teacher extends AbstractPerson {
+                        constructor(name, Salary){
+                            super();
+                            this.name = name;
+                            this.salary = Salary;
+                        }
+
+                        getSal(){
+                            return (this.salary);
+                        }
+
+
+                        info() {
+                            return ("I am a Teacher");
+                        }
+                    }
+                    var teacher1 = new Teacher(name= 'Goku', 50);
+                    teacher1.info();
+                    document.writeln(teacher1.info() +"<br>"); 
+                    document.writeln(teacher1.getSal()+"<br>");
+    </script>
+    
 </body>
 </html>
