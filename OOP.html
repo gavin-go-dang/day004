@@ -152,7 +152,6 @@
                 display_2()
                 {
                     super.display_2();
-                    // document.writeln("This is Function 2 of B<br>"); //Overload function
                 }
             }
             
@@ -162,27 +161,45 @@
                 message.display();
             });
             a[1].display_2()
-            </script>
-            <h2>Abstraction</h2>
+    </script>
+    <h2>Abstraction</h2>
     <script>
             class AbstractPerson {
-            name   = "Somebody"
-            age    = 1001
-            gender = "male"
-            // --
-            constructor () { throw new Error ("AbstractPerson is an abstract class.") }
-            getSomething () { throw new Error ("Not overridden.") }
-            setSomething () { throw new Error ("Not overridden.") }
-            } //. AbstractPerson
+                    constructor() {
+                        if (this.constructor == AbstractPerson) {
+                        throw new Error("Your Error Message...");
+                            }
+                        }
+                        info() {
+                            throw new Error(" Added abstract Method has no implementation");
+                        }
 
-            class American extends AbstractPerson {
-            } //. American
+                        getSal() {
+                            throw new Error(" Added abstract Method has no implementation");
+                        }
+                    }
 
 
-            // - main - - - - - - - - - - - -
+                    class Teacher extends AbstractPerson {
+                        constructor(name, Salary){
+                            super();
+                            this.name = name;
+                            this.salary = Salary;
+                        }
 
-            var fred = new American ()
-            console.log (fred.getSomething ())
+                        getSal(){
+                            return (this.salary);
+                        }
+
+
+                        info() {
+                            return ("I am a Teacher");
+                        }
+                    }
+                    var teacher1 = new Teacher(name= 'Goku', 50);
+                    teacher1.info();
+                    document.writeln(teacher1.info() +"<br>"); 
+                    document.writeln(teacher1.getSal()+"<br>");
     </script>
     
 </body>
