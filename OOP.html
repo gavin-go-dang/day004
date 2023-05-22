@@ -112,31 +112,35 @@
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(
             res => {
-                console.log(res);
-            
+                console.log(res);            
         })
     </script>
-    <script>  
-        class A  
-          {  
-             display()  
-            {  
-              document.writeln("A is invoked<br>");  
-            }  
-          }  
-        class B extends A  
-          {  
-            display()  
-            {  
-              document.writeln("B is invoked");  
-            }  
-          }  
-          
-        var a=[new A(), new B()]  
-        a.forEach(function(msg)  
-        {  
-        msg.display();  
-        });  
-    </script>  
+    
+    <h2>Polymophsm</h2>
+    <script>
+
+        class A
+        {
+            display()
+            {
+                document.writeln("This is A class <br>");
+            }
+            
+        }
+        class B extends A
+        {
+            display()
+            {
+                document.writeln("This is B class<br>"); //Overload function
+            }
+        }
+        
+        var a=[new A(), new B()]
+        a.forEach(function(message)
+        {
+            message.display();
+        });
+        </script>
+    
 </body>
 </html>
